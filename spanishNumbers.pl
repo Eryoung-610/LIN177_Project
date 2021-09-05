@@ -168,6 +168,148 @@ spanish(Stem,[stem]) :-
     append(Root,[//],Temp),
     append(Temp,Singular,Stem).
 
+% 110-115
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[tens]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+% 116-120
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[tens]),
+    spanish(Singular,[ones]),
+    last(Tens,LastOfTens),
+    [FirstOfOnes|_] = Singular,
+    % ciento, //
+    append(Root, [//], Temp),
+    % ciento, //, dieci
+    append(Temp, Tens, Tempp),
+    % ciento, //, dieciseis
+    append(Tempp,Singular,Stem),
+    homorganic(LastOfTens,FirstOfOnes).
+
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[tens]),
+    spanish(Singular,[ones]),
+    last(Tens,LastOfTens),
+    [FirstOfOnes|_] = Singular,
+    % ciento, //
+    append(Root, [//], Temp),
+    % ciento, //, dieci
+    append(Temp, Tens, Tempp),
+    % ciento, //, dieciseis
+    append(Tempp,Singular,Stem),
+    homorganicc(LastOfTens,FirstOfOnes).
+
+%---------------------------------------------------------------------------------------
+
+% 120
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Twenty,[twenty]),
+    append(Root,[//],Temp),
+    append(Temp,Twenty,Stem).
+
+
+% 120s
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[twentiesroot]),
+    spanish(Singular,[ones]),
+    append(Root,[//],Temp),
+    append(Temp, Tens, Tempp),
+    append(Tempp,Singular,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 130
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[thirties]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 140
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[forties]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+
+%---------------------------------------------------------------------------------------
+
+% 150
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[fifites]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 160
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[sixties]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+
+%---------------------------------------------------------------------------------------
+
+% 170
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[seventies]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+
+%---------------------------------------------------------------------------------------
+
+% 180
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[eighties]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 190
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[nineties]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+% 130,140,150,160,170,180,190
+spanish(Stem, [stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[thirtytoninety]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Stem).
+
+% 130,140,150,160,170,180,190 plus the singular
+spanish(Stem,[stem]) :-
+    spanish(Root,[hundredroot]),
+    spanish(Tens,[thirtytoninety]),
+    spanish(Singular,[ones]),
+    append(Root,[//],Temp),
+    append(Temp,Tens,Tempp),
+    append(Tempp,[//],Temppp),
+    append(Temppp,[y],Tempppp),
+    append(Tempppp,[//],Temppppp),
+    append(Temppppp,Singular,Stem).
+
+%---------------------------------------------------------------------------------------
+
 %---------------------------------------------------------------------------------------
 
 % HOMORGANICS
