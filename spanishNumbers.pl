@@ -162,21 +162,21 @@ spanish([c,i,e,P1,t,o], [hundredroot]) :-
     phone(P1), snt(P1),nas(P1),not(lab(P1)),alv(P1),cor(P1),not(sib(P1)).
 
 % 100-109
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Singular,[ones]),
     append(Root,[//],Temp),
     append(Temp,Singular,Stem).
 
 % 110-115
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[tens]),
     append(Root,[//],Temp),
     append(Temp,Tens,Stem).
 
 % 116-120
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[tens]),
     spanish(Singular,[ones]),
@@ -190,7 +190,7 @@ spanish(Stem,[stem]) :-
     append(Tempp,Singular,Stem),
     homorganic(LastOfTens,FirstOfOnes).
 
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[tens]),
     spanish(Singular,[ones]),
@@ -207,7 +207,7 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 120
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Twenty,[twenty]),
     append(Root,[//],Temp),
@@ -215,7 +215,7 @@ spanish(Stem,[stem]) :-
 
 
 % 120s
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[twentiesroot]),
     spanish(Singular,[ones]),
@@ -226,7 +226,7 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 130
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[thirties]),
     append(Root,[//],Temp),
@@ -235,7 +235,7 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 140
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[forties]),
     append(Root,[//],Temp),
@@ -245,7 +245,7 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 150
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[fifites]),
     append(Root,[//],Temp),
@@ -254,7 +254,7 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 160
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[sixties]),
     append(Root,[//],Temp),
@@ -264,7 +264,7 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 170
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[seventies]),
     append(Root,[//],Temp),
@@ -274,7 +274,7 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 180
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[eighties]),
     append(Root,[//],Temp),
@@ -283,21 +283,21 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 190
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[nineties]),
     append(Root,[//],Temp),
     append(Temp,Tens,Stem).
 
 % 130,140,150,160,170,180,190
-spanish(Stem, [stem]) :-
+spanish(Stem, [hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[thirtytoninety]),
     append(Root,[//],Temp),
     append(Temp,Tens,Stem).
 
 % 130,140,150,160,170,180,190 plus the singular
-spanish(Stem,[stem]) :-
+spanish(Stem,[hundreds]) :-
     spanish(Root,[hundredroot]),
     spanish(Tens,[thirtytoninety]),
     spanish(Singular,[ones]),
@@ -311,21 +311,18 @@ spanish(Stem,[stem]) :-
 %---------------------------------------------------------------------------------------
 
 % 200
-twohundred([P1,o,s],[twohundred]) :-
-    phone(P1), cor(P1),voi(P1), not(nas(P1)),alv(P1), ant(P1), not(lab(P1)),not(pal(P1)),not(sib(P1)), not(snt(P1)).
-
-spanish(Stem,[test]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     append(Prefix,Root,Temp),
     append(Temp,[s],Stem).
 
 %---------------------------------------------------------------------------------------
 
 % 201-209
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Singular,[ones]),
     append(Prefix,Root,X),
     append(X,[s],Y),
@@ -335,9 +332,9 @@ spanish(Stem,[tester]) :-
 %---------------------------------------------------------------------------------------
 
 % 210-215
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Tens,[tens]),
     append(Prefix,Root,X),
     append(X,[s],Y),
@@ -347,9 +344,9 @@ spanish(Stem,[tester]) :-
 %---------------------------------------------------------------------------------------
 
 % 216-219
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Tens,[tens]),
     spanish(Singular,[ones]),
     append(Prefix,Root,X),
@@ -361,9 +358,9 @@ spanish(Stem,[tester]) :-
     [FirstOfOnes|_] = Singular,
     homorganic(LastOfTens,FirstOfOnes).
 
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Tens,[tens]),
     spanish(Singular,[ones]),
     append(Prefix,Root,X),
@@ -378,9 +375,9 @@ spanish(Stem,[tester]) :-
 %---------------------------------------------------------------------------------------
 
 % 220
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Tens,[twenty]),
     append(Prefix,Root,X),
     append(X,[s],Y),
@@ -390,9 +387,9 @@ spanish(Stem,[tester]) :-
 %---------------------------------------------------------------------------------------
 
 % 221-229
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Tens,[twentiesroot]),
     spanish(Singular,[ones]),
     append(Prefix,Root,X),
@@ -404,9 +401,9 @@ spanish(Stem,[tester]) :-
 %---------------------------------------------------------------------------------------
 
 % 230,240,250,etc up to 290
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Tens,[thirtytoninety]),
     % dosciento
     append(Prefix,Root,X),
@@ -420,9 +417,9 @@ spanish(Stem,[tester]) :-
 %---------------------------------------------------------------------------------------
 
 % 231-239,241-249,251-259,etc up to 299
-spanish(Stem,[tester]) :-
+spanish(Stem,[twohundreds]) :-
     spanish(Root,[hundredroot]),
-    twohundred(Prefix,[twohundred]),
+    twohundred(Prefix),
     spanish(Tens,[thirtytoninety]),
     spanish(Singular,[ones]),
     append(Prefix,Root,X),
@@ -434,52 +431,254 @@ spanish(Stem,[tester]) :-
     append(C,[//],D),
     append(D,Singular,Stem).
 
-% COVERS 201-209,301-309,601-609
-% spanish(Stem,[stem]) :
-%     spanish(Root,[hundredroot]),
-%     spanish(Prefix,[ones]),
-%     spanish(Ones,[ones]),
-%     last(Prefix,LastOfPrefix),
-%     append(Root,[s],Cientos),
-%     last(Cientos,LastOfCientos),
-%     append(Prefix,Cientos,Hundred),
-%     append(Hundred,[//], Temp),
-%     append(Temp, Ones, Stem),
-%     homorganiccc(LastOfPrefix,LastOfCientos).
+%---------------------------------------------------------------------------------------
 
-% 210-215, 310-315, 610-615
-% spanish(Stem,[stem]) :
-%     spanish(Root,[hundredroot]),
-%     spanish(Prefix,[ones]),
-%     spanish(Tens,[tens]),
-%     last(Prefix,LastOfPrefix),
-%     append(Root,[s],Temp),
-%     last(Temp,LastOfTemp),
-%     append(Prefix,Temp,Tempp),
-%     append(Tempp,[//], Temppp),
-%     append(Temppp,Tens,Stem),
-%     homorganiccc(LastOfPrefix,LastOfTemp).
-
-% 216-219,316-319,616-619
-% spanish(Stem,[test]) :
-%     spanish(Root,[hundredroot]),
-%     spanish(Prefix,[ones]),
-%     spanish(Singular,[ones]),
-%     spanish(Tens,[tens]),
-%     % cientos
-%     append(Root,[s],X),
-%     % doscientos
-%     append(Prefix,X,Y),
-%     % doscientos, //
-%     append(Y,[//],Z),
-%     % doscientos, //, dieci
-%     append(Z, Tens, A),
-%     % doscientos, //, dieci, seis
-%     append(A,Singular, Stem).
-
-
+% 300
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    append(Prefix,Root,Temp),
+    append(Temp,[s],Stem).
 
 %---------------------------------------------------------------------------------------
+
+% 301-309
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Singular,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 310-315
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Tens,[tens]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 316-319
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Tens,[tens]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,Singular,Stem),
+    last(Tens,LastOfTens),
+    [FirstOfOnes|_] = Singular,
+    homorganic(LastOfTens,FirstOfOnes).
+
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Tens,[tens]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,Singular,Stem),
+    last(Tens,LastOfTens),
+    [FirstOfOnes|_] = Singular,
+    homorganicc(LastOfTens,FirstOfOnes).
+
+%---------------------------------------------------------------------------------------
+
+% 320
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Tens,[twenty]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 321-329
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Tens,[twentiesroot]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,Singular,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 330,340,350,etc up to 390
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Tens,[thirtytoninety]),
+    % dosciento
+    append(Prefix,Root,X),
+    % doscientos
+    append(X,[s],Y),
+    % doscientos, //,
+    append(Y,[//],Z),
+    % doscientos, // trienta
+    append(Z,Tens,Stem).
+
+%----------------------------------------------------------------------------------------
+
+% 331-339,341-349,351-359,etc up to 399
+spanish(Stem,[threehundreds]) :-
+    spanish(Root,[hundredroot]),
+    threehundred(Prefix),
+    spanish(Tens,[thirtytoninety]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,[//],B),
+    append(B,[y],C),
+    append(C,[//],D),
+    append(D,Singular,Stem).
+
+%----------------------------------------------------------------------------------------
+
+% 400
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    append(Prefix,Root,Temp),
+    append(Temp,[s],Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 401-409
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Singular,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 410-415
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Tens,[tens]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 416-419
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Tens,[tens]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,Singular,Stem),
+    last(Tens,LastOfTens),
+    [FirstOfOnes|_] = Singular,
+    homorganic(LastOfTens,FirstOfOnes).
+
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Tens,[tens]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,Singular,Stem),
+    last(Tens,LastOfTens),
+    [FirstOfOnes|_] = Singular,
+    homorganicc(LastOfTens,FirstOfOnes).
+
+%---------------------------------------------------------------------------------------
+
+% 420
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Tens,[twenty]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 421-429
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Tens,[twentiesroot]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,Singular,Stem).
+
+%---------------------------------------------------------------------------------------
+
+% 430,440,450,etc up to 490
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Tens,[thirtytoninety]),
+    % dosciento
+    append(Prefix,Root,X),
+    % doscientos
+    append(X,[s],Y),
+    % doscientos, //,
+    append(Y,[//],Z),
+    % doscientos, // trienta
+    append(Z,Tens,Stem).
+
+%----------------------------------------------------------------------------------------
+
+% 431-439,441-449,451-459,etc up to 499
+spanish(Stem,[fourhundreds]) :-
+    spanish(Root,[hundredroot]),
+    fourhundred(Prefix),
+    spanish(Tens,[thirtytoninety]),
+    spanish(Singular,[ones]),
+    append(Prefix,Root,X),
+    append(X,[s],Y),
+    append(Y,[//],Z),
+    append(Z,Tens,A),
+    append(A,[//],B),
+    append(B,[y],C),
+    append(C,[//],D),
+    append(D,Singular,Stem).
+
+%----------------------------------------------------------------------------------------
+
 
 % HOMORGANICS
 % Need i to match with s. For dieci-seis, dieci-siete
@@ -508,6 +707,17 @@ homorganicccc(A,B) :-
     not(hih(A)) <=> sib(B),not(voi(B)).
 
 
-% ------------------------------------------------------
-helper([c,u,a,P1,r,o],[fourhundred]) :-
+% -----------------------------------------------------
+
+% PREFIXES FOR HUNDREDS
+% 200
+twohundred([P1,o,s]) :-
+    phone(P1), cor(P1),voi(P1), not(nas(P1)),alv(P1), ant(P1), not(lab(P1)),not(pal(P1)),not(sib(P1)), not(snt(P1)).
+
+% 300
+threehundred([P1,r,e,s]) :-
+    phone(P1), alv(P1),ant(P1),cor(P1),not(vel(P1)),not(voi(P1)),not(pal(P1)),not(sib(P1)).
+
+% 400
+fourhundred([c,u,a,P1,r,o]) :-
     phone(P1), alv(P1),ant(P1),cor(P1),not(vel(P1)),not(voi(P1)),not(pal(P1)),not(sib(P1)).
